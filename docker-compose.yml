@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  nginx-test:
+    container_name: xxx-website-stage
+    image: nginx:latest
+    build:
+      context: ./deploy
+      target: stage
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+    restart: always
